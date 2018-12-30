@@ -10,7 +10,8 @@ private class Program
     static void Main()
     {
         
-        // Does not work at all in C#, fix it!
+        // Does not work at all in C#, fix it:
+        //https://stackoverflow.com/questions/32778070/how-can-check-anagram-strings-in-c-sharp
         bool checkAnagram(string str1, string str2)
         {
             if (str1.Length != str2.Length) return false;
