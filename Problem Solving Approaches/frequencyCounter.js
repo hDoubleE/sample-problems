@@ -47,7 +47,7 @@ arraySquared([1,2,3,4,5,], [1, 4, 9, 16, 1]);
 // False
 
 /* Example: Design a function that takes two strings and compares them to see if they are a valid anagram. 
- * Return nboolean.
+ * Return boolean.
  * O(n)
 */
 
