@@ -9,11 +9,11 @@ function _linearSearch(arr: Array<number>, val: number): boolean {
 
 
 function _binarySearch(arr: Array<number>, val: number): number {
-    let min = 0;
-    let max = arr.length;
+    let min: number = 0;
+    let max: number = arr.length;
 
     while (min <= max) {
-        let mid = Math.floor((min + max) / 2)
+        let mid: number = Math.floor((min + max) / 2)
         let current =  arr[mid];
         
         if (current < val) {

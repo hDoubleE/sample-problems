@@ -6,7 +6,7 @@ using System.Collections.Generic;
 // Your program should count and display the total number of vowels (A, E, I, O, U)
 // Count both uppercase and lowercase vowels – in that given input. In the example above, the output should 9.
 
-// I wrote three methods experimenting with efficency and achieved O(n), the best possible runtime for this problem.
+// I wrote three methods experimenting with efficiency and achieved O(n), the best possible runtime for this problem.
 
 namespace CompileTime
 {
@@ -21,9 +21,9 @@ namespace CompileTime
             string input = Console.ReadLine().ToLower();
 
             // Call each of three methods with user input string.  
-            Console.WriteLine(countVowelsList(input));
-            Console.WriteLine(countVowelsArray(input));
-            Console.WriteLine(countVowelsDict(input));
+            Console.WriteLine($"Method 1 returned: {countVowelsArray(input)} vowels");
+            Console.WriteLine($"Method 2 returned: {countVowelsList(input)} vowels");
+            Console.WriteLine($"Method 3 returned: {countVowelsDict(input)} vowels");
 
             int countVowelsArray(string s)
             {
