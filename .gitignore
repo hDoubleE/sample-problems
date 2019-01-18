@@ -1,2 +1,4 @@
 .gitignore
 node_modules
+launch.json
+tasks.json
