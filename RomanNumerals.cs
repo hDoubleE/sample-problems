@@ -21,7 +21,7 @@ namespace Converter
 
             if ((number < 0) || (number > 3999))
             {
-                throw new ArgumentOutOfRangeException("Input value betwheen 1 and 3999");
+                throw new ArgumentOutOfRangeException("Input value between 1 and 3999");
             }
             while (number > 1)
             {

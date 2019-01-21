@@ -1,4 +1,4 @@
-dpublic void Main() 
+public void Main() 
 {
     int[] a = { 1, 2, 3, 4, 5 };
     int[] b = { 1, 4, 9, 16, 25 };
