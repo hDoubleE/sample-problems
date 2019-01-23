@@ -11,7 +11,6 @@ namespace Problems
             int[] theArray = { 2, 8, 12, 4, 9, 6 };
             Console.WriteLine(solve.MaxSequence(theArray, 3));
             Console.WriteLine(solve.CheckDupes(theArray));
-          
         }
     }
 
