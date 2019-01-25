@@ -1,22 +1,25 @@
 // Write an efficient function to find the first nonrepeated character
 // in a string. Example: "total", return: 'o'. "teeter", return 'r'.
 // O(2n) -> O(n) 
-namespace RomanNumeralConverter
+namespace NonDuplicate
 {
     public class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            Console.WriteLine());
+            Console.WriteLine(StringProcessor.FirstNonDuplicateArray("total"));
+            Console.WriteLine(StringProcessor.FirstNonDuplicateDict("teeter"));
         }
-    }
 
-    public class StringProcessor
+
+    }
+    internal class StringProcessor
     {
-        internal static char printFirstDuplicate(string s)
+        internal static char FirstNonDuplicateArray(string s)
         {
-            int[] arr = new int[s.Length + 1];
+            int[] arr = new int[255];
             for (int i = 0; i < s.Length; i++)
+
             {
                 char c = s[i];
                 arr[c]++;
@@ -26,11 +29,13 @@ namespace RomanNumeralConverter
                 char c = s[i];
                 if (arr[c] == 1)
                 {
-                    return arr[s[i]];
+                    return c;
                 }
             }
+            return char.MaxValue;
         }
-        internal static char firstSingleChar(string s)
+
+        internal static char FirstNonDuplicateDict(string s)
         {
             if (s == string.Empty)
             {
