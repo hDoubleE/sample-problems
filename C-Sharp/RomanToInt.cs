@@ -28,15 +28,6 @@ namespace RomanNumeralConverter
             Converter convert = new Converter();
             Console.Write("Enter Roman Numeral: ");
             string number = Console.ReadLine();
-            //int roman;
-            //try
-            //{
-            //    int value = Convert.ToInt32(number);
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
          
             Console.WriteLine(convert.RomanToInt(number));
         }
