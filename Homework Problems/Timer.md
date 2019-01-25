@@ -1,7 +1,7 @@
 # Timing Snippet
 
-</snippet>
+```C#
 var timer = System.Diagnosis.Stopwatch.StartNew();
 watch.Stop();
 var elapsedMS = watch.ElapsedMilliseconds();
-<snippet/>
+```
