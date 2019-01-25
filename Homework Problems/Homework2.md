@@ -23,3 +23,20 @@ If you had 100 floors and 2 eggs, what is the most efficient way to determine wh
 maximum height you can drop an egg and not crack it? 
 
 Return sum of the largest two numbers in a given array
+
+Return sum of the largest two numbers in a given array. 10 homework extra points available
+
+Write a Program which checks if two Strings are Anagram or not? 5 homework extra points available
+
+▪ Given a number (e.g.: 427) find the largest possible number from its digits (e.g.: 742) 5 homework extra points available
+
+▪ find repeated elements in an array [Glassdoor.com: Microsoft interview question] 5 homework extra points available
+
+▪ shuffle a string array [Glassdoor.com: Microsoft interview question] 5 homework extra points available
+
+▪ sort 2 different arrays, and save the result in the second array, if the first contains n elements, and the second contains m elements, and the second is allocated a length of m+n. [Glassdoor.com: Microsoft interview question]
+
+10 homework extra points available –
+do not use an extra array ... the second array should be sufficient
+i.e. your algorithm should use O(1) extra space .
+   

@@ -85,10 +85,9 @@ namespace Converter
             return String.Empty;
         }
     }
-
 }
 
-/* Let's look at the call stack:
+/* Call stack:
 
 Given and input of 2673:
 
