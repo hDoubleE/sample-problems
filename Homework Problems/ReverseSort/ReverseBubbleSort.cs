@@ -28,7 +28,7 @@ namespace Sorting
             }
 
             // Sort data.
-            SelectionSort(data);
+            ReverseBubbleSort(data);
 
             // Print sorted data.
             Console.Write("\nSorted: ");
@@ -38,23 +38,28 @@ namespace Sorting
             }
         }
 
-        public static void SelectionSort(int[] arr)
+        public static void ReverseBubbleSort(int[] arr)
         {
-            for (int i = 0; i < arr.Length; i++)
+            long numCompare = 0;
+            for (int i = arr.Length; i > 0; i--)
             {
-                int lowest = i;
-                for (int j = i + 1; j < arr.Length; j++)
+                bool swap = false;
+                for (int j = 0; j < i - 1; j++)
                 {
-                    if (arr[j] > arr[lowest])
+                    numCompare++;
+                    if (arr[j] < arr[j + 1])
                     {
-                        lowest = j;
+                        swap = true;
+                        int lowValue = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = lowValue;
                     }
                 }
-                if (i != lowest)
+
+                if (!swap)
                 {
-                    int temp = arr[lowest];
-                    arr[lowest] = arr[i];
-                    arr[i] = temp;
+                    Console.WriteLine($"\nNumber of Comparisons: {numCompare}");
+                    break;
                 }
             }
         }

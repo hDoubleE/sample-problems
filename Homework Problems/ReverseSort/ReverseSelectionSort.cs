@@ -28,7 +28,7 @@ namespace Sorting
             }
 
             // Sort data.
-            SelectionSort(data);
+            ReverseSelectionSort(data);
 
             // Print sorted data.
             Console.Write("\nSorted: ");
@@ -38,22 +38,23 @@ namespace Sorting
             }
         }
 
-        public static void SelectionSort(int[] arr)
+        public static void ReverseSelectionSort(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                int lowest = i;
+                int lowValIndex = i;
                 for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (arr[j] > arr[lowest])
+                    if (arr[lowValIndex] < arr[j])
+                        // 5, 0              7, 4
                     {
-                        lowest = j;
+                        lowValIndex = j;
                     }
                 }
-                if (i != lowest)
+                if (i != lowValIndex)
                 {
-                    int temp = arr[lowest];
-                    arr[lowest] = arr[i];
+                    int temp = arr[lowValIndex];
+                    arr[lowValIndex] = arr[i];
                     arr[i] = temp;
                 }
             }
