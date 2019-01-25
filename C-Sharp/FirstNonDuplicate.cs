@@ -7,15 +7,10 @@ namespace NonDuplicate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(StringProcessor.FirstNonDuplicateArray("total"));
-            Console.WriteLine(StringProcessor.FirstNonDuplicateDict("teeter"));
+            Console.WriteLine(FirstNonDuplicateArray("total"));
+            Console.WriteLine(FirstNonDuplicateDict("teeter"));
         }
-
-
-    }
-    internal class StringProcessor
-    {
-        internal static char FirstNonDuplicateArray(string s)
+        public static char FirstNonDuplicateArray(string s)
         {
             int[] arr = new int[255];
             for (int i = 0; i < s.Length; i++)
@@ -32,10 +27,10 @@ namespace NonDuplicate
                     return c;
                 }
             }
-            return char.MaxValue;
+            return char.MaxValue; // char.MaxValue == ?
         }
 
-        internal static char FirstNonDuplicateDict(string s)
+        public static char FirstNonDuplicateDict(string s)
         {
             if (s == string.Empty)
             {
@@ -55,7 +50,6 @@ namespace NonDuplicate
                     table[s[i]] += 1;
                 }
             }
-
             for (int i = 0; i < s.Length; i++)
             {
                 if (table[s[i]] == 1)
