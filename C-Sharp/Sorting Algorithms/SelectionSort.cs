@@ -45,7 +45,7 @@ namespace Sorting
                 int lowest = i;
                 for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (arr[j] > arr[lowest])
+                    if (arr[j] < arr[lowest])
                     {
                         lowest = j;
                     }
