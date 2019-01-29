@@ -38,5 +38,4 @@ Write a Program which checks if two Strings are Anagram or not? 5 homework extra
 
 10 homework extra points available –
 do not use an extra array ... the second array should be sufficient
-i.e. your algorithm should use O(1) extra space .
-   
+i.e. your algorithm should use O(1) extra space.
