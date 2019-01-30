@@ -23,7 +23,7 @@ namespace Sorting
             }
 
             // Sort data.
-            SelectionReverseSortStrings(data);
+            SelectionReverseSort(data);
 
             // Print sorted data.
             Console.Write("\nReverse Sorted: ");
@@ -33,7 +33,7 @@ namespace Sorting
             }
         }
 
-        public static void SelectionReverseSortStrings(string[] arr)
+        public static void SelectionReverseSort(string[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {

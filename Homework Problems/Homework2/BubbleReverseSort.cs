@@ -22,7 +22,7 @@ namespace Sorting
             }
 
             // Sort data.
-            BubbleReverseSortStrings(data);
+            BubbleReverseSort(data);
 
             // Print sorted data.
             Console.Write("\nReverse Sorted: ");
@@ -32,7 +32,7 @@ namespace Sorting
             }
         }
 
-        public static void BubbleReverseSortStrings(string[] arr)
+        public static void BubbleReverseSort(string[] arr)
         {
             long numCompare = 0;
             for (int i = arr.Length; i > 0; i--)
