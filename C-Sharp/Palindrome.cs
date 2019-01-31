@@ -20,7 +20,7 @@ namespace Palindrome
 
             Solutions solution = new Solutions();
 
-            solution.isPalindrome(rcll.First);
+            Console.WriteLine(solution.isPalindrome(rcll.First));
 
 
             string d = "deed";
@@ -85,16 +85,16 @@ namespace Palindrome
             return head;
         }
 
-        public bool isEqual(LinkedListNode<char> one, LinkedListNode<char> two)
+        public bool isEqual(LinkedListNode<char> orig, LinkedListNode<char> reversed)
         {
-            while (one != null && two != null)
+            while (orig != null && reversed != null)
             {
-                if (one.Value != two.Value)
+                if (orig.Value != reversed.Value)
                 {
                     return false;
                 }
-                one = one.Next;
-                two = two.Next;
+                orig = orig.Next;
+                reversed = reversed.Next;
             }
             return true;
         }

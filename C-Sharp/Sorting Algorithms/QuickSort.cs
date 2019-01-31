@@ -1,5 +1,3 @@
-// Runtime of my algo
-// Merge is stable
 using System;
 
 namespace Sorting
@@ -38,6 +36,7 @@ namespace Sorting
             {
                 Console.Write($"{i} ");
             }
+            Console.WriteLine();
         }
         static void QuickSort(int[] arr)
         {
@@ -76,10 +75,5 @@ namespace Sorting
             a = b;
             b = temp;
         }
-        static bool ArrayContainsTwoValues(int[] arr, int i, int pivot)
-        {
-            return arr[i] <= pivot;
-        }
     }
 }
-
