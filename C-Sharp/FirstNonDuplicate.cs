@@ -14,7 +14,6 @@ namespace NonDuplicate
         {
             int[] arr = new int[255];
             for (int i = 0; i < s.Length; i++)
-
             {
                 char c = s[i];
                 arr[c]++;

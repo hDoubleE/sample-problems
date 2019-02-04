@@ -21,45 +21,45 @@ public class Solution {
         return newArr;
     }
 }
+// Two-pass approach, temp array get garbage collected.
+public class Solution {
+    public void Rotate(int[] nums, int k) 
+    {
+        int[] tempArr = new int[nums.Length];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            tempArr[(i + k) % nums.Length] = nums[i];
+        }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = tempArr[i];
+        }
+    }
+}
 
-// Initial assignments:
-  // origArr = [1, 2, 3, 4]
-  // len = origArr.length = 4
-  // numberOfRotations = k = 2
-  // newArr = new int[len]
-  // newArr: [nil, nil, nil, nil]
-
-// NOTE:
-  // Loop through length of origArr
-  // for (int i = 0; i < len; i++)
-
-// Calculate newIndex and update newArr at index (i):
-  // newIndex = (i + numberOfRotations) % len
-  // newArr[i] = origArr[newIndex]
-
-// LOOP1:
-  // i = 0
-  // newIndex = (0 + 2) % 4 = 2
-  // newArr[i = 0] = origArr[newIndex = 2] = 3
-  // newArr: [3, nil, nil, nil]
-
-// LOOP2:
-  // i = 1
-  // newIndex = (1 + 2) % 4 = 3
-  // newArr[i = 1] = origArr[newIndex = 3] = 4
-  // newArr: [3, 4, nil, nil]
-
-// LOOP3:
-  // i = 2
-  // new_index = (2 + 2) % 4 = 0
-  // newArr[i = 2] = origArr[newIndex = 0] = 1
-  // newArr: [3, 4, 1, nil]
-
-// LOOP4:
-  // i = 3
-  // new_index = (3 + 2) % 4 = 1
-  // newArr[i = 3] = origArr[newIndex = 1] = 2
-  // newArr: [3, 4, 1, 2]
-
-// After final loop our newArr = [3, 4, 1, 2]
-// You can return the output and join in Main.
+// In-place approach.
+public class Solution {
+    public void Rotate(int[] nums, int k) {
+        // where array size is less than order num 
+        k %= nums.Length;
+        // first reverse whole array
+        Reverse(nums, 0, nums.Length - 1);
+        // reverse front half, before k
+        Reverse(nums, 0, k - 1);
+        // reverse second half, k to end.
+        Reverse(nums, k, nums.Length - 1);
+        
+    }
+    public static void Reverse(int[] nums, int start, int end)
+    {
+      // swaps elements.
+        while (start <= end)
+        {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
