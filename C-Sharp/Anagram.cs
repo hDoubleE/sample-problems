@@ -34,6 +34,7 @@ public class Solution {
         return true;
     }
 }
+
 // Array, faster!
 public class Solution {
     public bool IsAnagram(string s, string t) { 

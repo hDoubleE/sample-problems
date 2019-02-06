@@ -49,6 +49,7 @@ namespace Sorting
                 QuickReverseSort(arr, storeIndex, rightIndex);
             }
         }
+        
         static int Partition(string[] arr, int leftIndex, int rightIndex) // Return new index of pivot.
         {
             string pivotString = arr[rightIndex];
