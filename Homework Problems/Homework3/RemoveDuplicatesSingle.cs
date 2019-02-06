@@ -348,15 +348,14 @@ namespace DataStructures
 
         /// <summary>
         /// Removes duplicates using additional memory (HashSet).
-        /// Does not use Generics, still troubleshooting this, strings only.
         /// O(n) time, O(n) space.
         /// </summary>
-        /// <param name="head">Head node of LinkedList, string type.</param>
-        public void RemoveDupesWithMemory(Node<string> head)
+        /// <param name="head">Head node of LinkedList.</param>
+        public void RemoveDupesWithMemory(Node<T> head)
         {
-            Node<string> current = head;
-            Node<string> previous = null;
-            HashSet<string> set = new HashSet<string>();
+            Node<T> current = head;
+            Node<T> previous = null;
+            HashSet<T> set = new HashSet<T>();
             while (current != null)
             {
                 if (set.Contains(current.Value))
@@ -373,19 +372,19 @@ namespace DataStructures
         }
         /// <summary>
         /// Removes duplicates using NO additional memory.
-        /// Does not use Generics, still troubleshooting this, strings only.
         /// O(n^2) time, O(1) space.
         /// </summary>
-        /// <param name="head">Head node of LinkedList, string type.</param>
-        public void RemoveDupesNoMemory(Node<string> head)
+        /// <param name="head">Head node of LinkedList.</param>
+        public void RemoveDupesNoMemory(Node<T> head)
         {
-            Node<string> slow = head;
+            Node<T> slow = head;
             while (slow != null)
             {
-                Node<string> fast = slow;
+                Node<T> fast = slow;
                 while (fast.Next != null)
                 {
-                    if (fast.Next.Value == slow.Value)
+                    // Cannot use == or !=, must use object.Equals.
+                    if (Equals(fast.Next.Value, slow.Value))
                     {
                         fast.Next = fast.Next.Next;
                     }

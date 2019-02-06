@@ -6,7 +6,6 @@ namespace DataStructures
     {
         public static void Main()
         {
-
             // Create a new singly linked list of type string.
             SinglyLinkedList<string> sll = new SinglyLinkedList<string>();
             Console.WriteLine("Populate new singly linked list that is NOT a palindrome...");
@@ -15,7 +14,6 @@ namespace DataStructures
             sll.AddLast("Pig");
             sll.AddLast("Farm");
             sll.Print();
-
 
             // The IsPalindrome contains 3 methods:
             // IsPalindrome: Call two helper methods: O(2n) (including helper method execution)
@@ -32,7 +30,6 @@ namespace DataStructures
             sll.Clear();
             Console.WriteLine($"Linked list is Empty: {sll.IsEmpty()}");
             Console.WriteLine();
-
 
             Console.WriteLine("Populate new singly linked list that IS a palindrome...");
             sll.AddFirst("Dog");
@@ -72,7 +69,6 @@ namespace DataStructures
             Value = value;
             Next = null;
         }
-
     }
 
     /// <summary>
@@ -347,52 +343,53 @@ namespace DataStructures
         /// <summary>
         /// Checks if linked list is palindrome.
         /// Calls two helper methods.
-        /// Does not use generics, still fixing this, string input only.
         /// </summary>
-        /// <returns><c>true</c>, if linked list is palindrome, <c>false</c> otherwise.</returns>
+        /// <returns> True if linked list is palindrome, false otherwise.</returns>
         /// <param name="head">Head node of linked list being evaluated.</param>
-        public bool IsPalindrome(Node<string> head)
+        public bool IsPalindrome(Node<T> head)
         {
-            Node<string> reversed = ReverseAndCopy(head);
+            Node<T> reversed = ReverseAndCopy(head);
             return IsEqual(head, reversed);
         }
+
         /// <summary>
         /// Creates a reversed copy of the linked list.
         /// </summary>
         /// <returns>The head node to reversed linked list.</returns>
-        /// <param name="node">Node.</param>
-        public Node<string> ReverseAndCopy(Node<string> node)
+        /// <param name="node"> Head node to original list.</param>
+        public Node<T> ReverseAndCopy(Node<T> node)
         {
-            Node<string> First = null;
+            Node<T> First = null;
             while (node != null)
             {
-                Node<string> n = new Node<string>(node.Value);
+                Node<T> n = new Node<T>(node.Value);
                 n.Next = First;
                 First = n;
                 node = node.Next;
             }
             return First;
         }
+
         /// <summary>
         /// Compares original and reversed linked list for equality.
         /// </summary>
-        /// <returns><c>true</c>, if linked list is palindrome, <c>false</c> otherwise.</returns>
-        /// <param name="node">Node.</param>
-        public bool IsEqual(Node<string> one, Node<string> two)
+        /// <returns> True if linked list is palindrome, false otherwise.</returns>
+        /// <param name="one">Head node of original list.</param>
+        /// <param name="two">Head node of reversed list.</param>
+        public bool IsEqual(Node<T> one, Node<T> two)
         {
-
             while (one != null && two != null)
             {
-                // Could not check if Generic<T> are equal here. 
-                // Made all int type for these methods, as work-around until I can improve this.
-                if (one.Value != two.Value)
+                // When using Generics<T> must use object.Equals(obj1, obj2) to compare specific instances.
+                // Comparisons will not work for generic type T and T.
+                if (!Equals(one.Value, two.Value))
                 {
                     return false;
                 }
                 one = one.Next;
                 two = two.Next;
             }
-            return one == null && two == null;
+            return true;
         }
     }
 }

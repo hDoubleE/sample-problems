@@ -466,52 +466,54 @@ namespace DataStructures
         /// <summary>
         /// Checks if linked list is palindrome.
         /// Calls two helper methods.
-        /// Still trying to work in generics, only accepts int.
         /// </summary>
-        /// <returns><c>true</c>, if linked list is palindrome, <c>false</c> otherwise.</returns>
+        /// <returns> True, if linked list is palindrome, false otherwise.</returns>
         /// <param name="head">Head node of linked list being evaluated.</param>
-        public bool IsPalindrome(Node<int> head)
+        public bool IsPalindrome(Node<T> head)
         {
-            Node<int> reversed = ReverseAndCopy(head);
+            Node<T> reversed = ReverseAndCopy(head);
             return IsEqual(head, reversed);
         }
+
         /// <summary>
         /// Creates a reversed copy of the linked list.
         /// </summary>
         /// <returns>The head node to reversed linked list.</returns>
         /// <param name="node">Node.</param>
-        public Node<int> ReverseAndCopy(Node<int> node)
+        public Node<T> ReverseAndCopy(Node<T> node)
         {
-            Node<int> First = null;
+            Node<T> First = null;
             while (node != null)
             {
-                Node<int> n = new Node<int>(node.Value);
+                Node<T> n = new Node<T>(node.Value);
                 n.Next = First;
                 First = n;
                 node = node.Next;
             }
             return First;
         }
+
         /// <summary>
         /// Compares original and reversed linked list for equality.
         /// </summary>
-        /// <returns><c>true</c>, if linked list is palindrome, <c>false</c> otherwise.</returns>
-        /// <param name="node">Node.</param>
-        public bool IsEqual(Node<int> one, Node<int> two)
+        /// <returns> True, if linked list is palindrome, false otherwise.</returns>
+        /// <param name="one"> Head node of original list.</param>
+        /// <param name="two"> Head node of reversed list.</param>
+        public bool IsEqual(Node<T> one, Node<T> two)
         {
-
             while (one != null && two != null)
             {
-                // Could not check if Generic<T> are equal here. 
-                // Made all int type for these methods, as work-around until I can improve this.
-                if (one.Value != two.Value)
+                // Must use object.Equals, cannot compare type T and T.
+                // (one.Value != or == two.Value) will not compile.
+                if (!Equals(one.Value, two.Value))
                 {
                     return false;
                 }
                 one = one.Next;
                 two = two.Next;
             }
-            return one == null && two == null;
+            // Could also return true here.
+            return one == null && two == null; 
         }
     }
 }
