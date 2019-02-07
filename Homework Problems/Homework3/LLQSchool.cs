@@ -10,25 +10,16 @@ namespace CSC395_SinglyLinkedLists
     {
         static void Main(string[] args) //O(n) because ...
         {
-            Node nd = new Node(7);
-            nd.value = 77;
+            Queue que = new Queue();
+            que.enqueue(7);
+            que.enqueue(9);
+            que.enqueue(12);
+            que.enqueue(18);
+            que.print();
+            que.peek();
+            que.dequeue();
+            que.print();
 
-            //create a linked list
-            SinglyLinkedList myList = new SinglyLinkedList();
-
-            Stack myStack = new Stack();
-            myStack.push(7);
-            myStack.push(14);
-            myStack.push(29);
-            myStack.push(67);
-            myStack.print();
-
-            Console.WriteLine(isBalanced("{[]()([])}"));
-            Console.WriteLine(isBalanced("{[]()([])"));
-            Console.WriteLine(isBalanced("[]()([])}"));
-            Console.WriteLine(isBalanced("("));
-            Console.WriteLine(isBalanced("]"));
-            Console.WriteLine(isBalanced(""));
 
         }
     }
