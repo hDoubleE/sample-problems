@@ -37,7 +37,8 @@ namespace DataStructures
                 previous = current;
                 current = nextTemp;
             }
-            return previous;
+            head = previous;
+            return head;
         }
 
         public ListNode RecerseList(ListNode head)
